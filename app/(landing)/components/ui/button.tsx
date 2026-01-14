@@ -1,9 +1,8 @@
-type TButtonProps = {
-    children: React.ReactNode;
+type TButtonProps = React.PropsWithChildren<{
     className?: string;
     variant?: "primary" | "dark" | "ghost";
     size?: "normal" | "small";
-} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+}> & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button = ({children, className, variant ="primary", size = "normal", ...props}: TButtonProps) => {
     const baseStyles = "inline-flex gap-2 duration-300 justify-center items-center cursor-pointer hover:scale-105";
@@ -20,7 +19,7 @@ const Button = ({children, className, variant ="primary", size = "normal", ...pr
     };
 
     return (
-        <button className={'${baseStyles} ${variants[variant]} ${sizes[size]} ${className}'}
+        <button className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className ?? ""}`}
         {...props}
         >
             {children}

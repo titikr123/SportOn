@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import Button from "../ui/button";
+import { FiPlus } from "react-icons/fi";
 
 const productList = [
     {
@@ -61,13 +63,14 @@ const ProductsSection = () => {
             <div className="grid grid-cols-4 gap-6">
                 {productList.map((product, index) => (
                     <Link href="#" key={index} className="p-1.5 ">
-                    <div className="bg-primary-light aspect-square w-full flex justify-center items-center">
+                    <div className="bg-primary-light aspect-square w-full flex justify-center items-center relative">
                         <Image src={`/images/products/${product.imgUrl}`}
                         width={300}
                         height={300}
                         alt={product.name}
                         className="aspect-square object-contain"
                         />
+                        <Button className="w-10 h-10 !p-2 absolute right-3 top-3"><FiPlus size={24}/></Button>
                     </div>
                     <h3 className="font-medium text-lg mb-1.5 mt-6">{product.name}</h3>
                     <div className="flex justify-between">

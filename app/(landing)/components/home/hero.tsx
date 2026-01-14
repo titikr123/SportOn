@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Button from "../ui/button";
+import { FiFastForward } from "react-icons/fi";
 
 const HeroSection = () => {
     return (<section id="hero-section" className="flex container mx-auto h-screen">
@@ -21,8 +22,19 @@ const HeroSection = () => {
                     that moves as fast as you do. Premium fabrics. Unmatched comfort.
                     Limitless motion.
                 </p>
-                <div className="flex gap-5">
-                    <Button>View More</Button>
+                <div className="flex gap-5 mt-14">
+                    <Button>
+                        Explore More <FiFastForward />
+                    </Button>
+                    <Button variant="ghost">
+                        Watch Video
+                        <Image
+                        src="/images/icon-play-video.svg"
+                        alt="icon video"
+                        width={29}
+                        height={29}
+                        />
+                    </Button>
                 </div>
             </div>
             <Image
@@ -30,7 +42,7 @@ const HeroSection = () => {
             width={700}
             height={950}
             alt="Image SportOn Hero"
-            className="absolute right-2 -mt-40 -translate-y-1/2"
+            className="absolute right-2 -mt-65 -translate-y-1/2"
             />
         </div>
         <Image 
