@@ -8,6 +8,6 @@ export default function Home() {
     <HeroSection />
     <CategoriesSection />
     <ProductsSection />
-    <Footer />
+    <div className="mt-30" />
   </main>
 }
