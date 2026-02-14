@@ -13,8 +13,7 @@ type TCartItems = {
   handlePayment: () => void;
 };
 
-const CartItems = (props: TCartItems): JSX.Element => {
-  const { handlePayment } = props;
+const CartItems: React.FC<TCartItems> = ({ handlePayment }) => {
   const { items, removeItem } = useCartStore();
   const { push } = useRouter();
 
