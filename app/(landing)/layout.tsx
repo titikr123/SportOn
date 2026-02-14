@@ -8,7 +8,6 @@ const poppins = Poppins({
   variable: "--font-poppins",
   display: "swap",
   weight: ["400", "500", "600", "700", "800"],
-  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -23,9 +22,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${poppins.variable} antialiased`}>
-        <Header/>
+        <Header />
         {children}
         <Footer />
       </body>
