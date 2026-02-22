@@ -1,5 +1,5 @@
 "use client";
-import React, { JSX } from "react";
+
 import Image from "next/image";
 import priceFormatter from "@/app/utils/price-formatter";
 import Button from "../ui/button";
@@ -13,7 +13,7 @@ type TCartItems = {
   handlePayment: () => void;
 };
 
-const CartItems: React.FC<TCartItems> = ({ handlePayment }) => {
+const CartItems = ({ handlePayment }: TCartItems) => {
   const { items, removeItem } = useCartStore();
   const { push } = useRouter();
 
